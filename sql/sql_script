@@ -1,0 +1,48 @@
+--Create titles table
+CREATE TABLE titles (
+	title_id varchar(50) PRIMARY KEY NOT NULL,
+	title varchar(50)
+);
+
+--Create employees table
+CREATE TABLE employees (
+	emp_no int PRIMARY KEY NOT NULL,
+	emp_title_id varchar(50) REFERENCES titles(title_id),
+	birth_date date,
+	first_name varchar(50),
+	last_name varchar(50),
+	sex varchar(50),
+	hire_date date
+);
+
+--Create salaries table
+CREATE TABLE salaries (
+	emp_no int NOT NULL,
+	salary int,
+	PRIMARY KEY (emp_no, salary),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+--Create departments table
+CREATE TABLE departments (
+	dept_no varchar(50) PRIMARY KEY NOT NULL,
+	dept_name varchar(50)
+);
+
+--Create dept_manager table
+CREATE TABLE dept_manager (
+	dept_no varchar(50),
+	emp_no int NOT NULL,
+	PRIMARY KEY (dept_no, emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+--Create dept_emp table
+CREATE TABLE dept_emp (
+	emp_no int NOT NULL,
+	dept_no varchar(50),
+	PRIMARY KEY (emp_no, dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+);
