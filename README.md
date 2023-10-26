@@ -54,4 +54,9 @@ Welcome to my coding data analytics bootcamp journey! This repository showcases 
 
 - [SQLAlchemy Documentation](https://docs.sqlalchemy.org/en/20/) - Dive into SQLAlchemy's documentation for Python-based database interactions and Flask web applications.
 
+## scikit-learn
+
+- [scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html) - Explore the official documentation for scikit-learn to understand how to use this machine learning library effectively.
+
+
 Feel free to click on the provided links to access relevant documentation and resources for each topic. I'm excited to continue learning and growing in the world of coding and data analytics!
